@@ -1,1 +1,4 @@
 .idea/
+venv/
+res/out/
+res/xlsx/
