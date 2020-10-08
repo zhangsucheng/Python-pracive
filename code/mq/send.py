@@ -9,7 +9,7 @@ def send():
         pika.ConnectionParameters('114.215.151.210', 5672, '/', credentials))
     channel = connection.channel()
 
-    channel.queue_declare(queue='hello')
+    channel.queue_declare(queue='hello',passive=False,durable=False,auto_delete=True)
 
     channel.basic_publish(exchange='test.topic', routing_key='test.*', body='Hello World!')
     print(" [x] Sent 'Hello World!'")
